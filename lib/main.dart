@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : ( BuildContext context ) => HomePage(),
-        
       },
     );
   }
