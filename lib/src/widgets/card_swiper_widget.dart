@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:peliculas/src/models/pelicula_model.dart';
 
 class CardSwiper extends StatelessWidget {
   // const CardSwiper({Key key}) : super(key: key);
 
   //Definimos la lista final porque no va a cambiar
-  final List<dynamic> peliculas;
+  final List<Pelicula> peliculas;
 
   CardSwiper({@required this.peliculas});
 
@@ -28,10 +29,10 @@ class CardSwiper extends StatelessWidget {
           // Metemos dentro del ClipRRect nuestra imagen para poder ponerle borde redondeado
           return ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: Image.network(
-              "http://via.placeholder.com/500x500",
-              fit: BoxFit.fill
-            ),
+            child: FadeInImage(
+                placeholder: AssetImage('assets/img/no-image.jpg'),
+                fit: BoxFit.fill,
+                image: NetworkImage(peliculas[index].getPosterImg())),
             // child: Center(child: Text(peliculas[index].toString()),),
           );
         },
