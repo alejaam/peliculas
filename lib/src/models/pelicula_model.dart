@@ -1,7 +1,7 @@
 class Peliculas {
   List<Pelicula> items = new List();
   
-  Pelicula();
+  Peliculas();
 
   Peliculas.fromJsonList( List<dynamic> jsonList ){
     if( jsonList == null) return;
